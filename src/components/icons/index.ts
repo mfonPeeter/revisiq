@@ -1,0 +1,12 @@
+export { default as RocketIcon } from './RocketIcon';
+export { default as ContentStrategyIcon } from './ContentStrategyIcon';
+export { default as WebDesignIcon } from './WebDesignIcon';
+export { default as SocialMediaIcon } from './SocialMediaIcon';
+export { default as BrandingIcon } from './BrandingIcon';
+export { default as QuoteIcon } from './QuoteIcon';
+export { default as AwardIcon } from './AwardIcon';
+export { default as BoldHandStarsIcon } from './BoldHandStarsIcon';
+export { default as BoldHandLoveIcon } from './BoldHandLoveIcon';
+export { default as XIcon } from './XIcon';
+export { default as LinkedInIcon } from './LinkedInIcon';
+export { default as InstagramIcon } from './InstagramIcon';
