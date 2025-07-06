@@ -1,24 +1,48 @@
 import { motion } from 'framer-motion';
 import { QuoteIcon } from '../icons';
 
+const text = `We help companies build, launch, and scale their products. We provide the strategy, technology, and talent to bring your vision to life.`;
+
+const words = text.split(' ');
+
 const CompanyDescription = () => {
   return (
     <section>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          className="flex justify-center"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+          className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-7"
         >
-          <div className="mr-4">
-            <QuoteIcon />
-          </div>
-          <div className="max-w-[601px] text-[28px] font-medium leading-[43px]">
-            We help companies build, launch, and scale their products. We
-            provide the strategy, technology, and talent to bring your vision to
-            life.
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, scale: 0.8 },
+              visible: { opacity: 1, scale: 1 },
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <QuoteIcon className="size-10 sm:size-16 md:size-auto" />
+          </motion.div>
+
+          <div className="flex max-w-[601px] flex-wrap text-xl font-medium sm:text-2xl md:text-[28px] lg:leading-[43px]">
+            {words.map((word, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 },
+                }}
+                transition={{ duration: 0.5 }}
+                className="mr-2"
+              >
+                {word}
+              </motion.span>
+            ))}
           </div>
         </motion.div>
       </div>

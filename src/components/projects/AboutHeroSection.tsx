@@ -6,26 +6,11 @@ import Link from 'next/link';
 import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Mail, Sparkles } from 'lucide-react';
-import ImageCarousel from '../ui/image-carousel';
-import { RocketIcon } from '../icons';
-import FloatingParticles from '../ui/floating-particles';
 
-const carouselImages = [
-  {
-    src: '/images/hero/project-1.png',
-    alt: 'Project 1',
-  },
-  {
-    src: '/images/hero/project-2.png',
-    alt: 'Project 2',
-  },
-  {
-    src: '/images/hero/project-3.png',
-    alt: 'Project 3',
-  },
-];
+import FloatingParticles from '@/components/ui/floating-particles';
+import { StarsIcon } from '@/components/icons';
 
-const HeroSection = () => {
+const AboutHeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
@@ -39,7 +24,6 @@ const HeroSection = () => {
 
   // Gentle parallax transforms
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   // Scroll detection
   useEffect(() => {
@@ -101,7 +85,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1300px]">
-        <div className="grid grid-cols-1 place-items-center gap-12 md:grid-cols-2 md:gap-8 lg:gap-14 xl:gap-20">
+        <div className="">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -109,10 +93,10 @@ const HeroSection = () => {
               hidden: {},
               visible: { transition: { staggerChildren: 0.15 } },
             }}
-            className="relative flex flex-col items-center md:items-start"
+            className="relative flex flex-col items-center"
             style={{ y: y1 }}
           >
-            <div className="mb-6 flex flex-col items-center md:items-start lg:mb-9">
+            <div className="mb-6 flex flex-col items-center lg:mb-9">
               {/* Beautiful Chip Animation - Restored */}
               <motion.div
                 variants={{
@@ -127,24 +111,21 @@ const HeroSection = () => {
               >
                 <motion.div
                   animate={{
-                    x: [0, 0, 200],
-                    y: [0, 0, -100],
-                    rotate: [0, 0, 20],
-                    opacity: [1, 1, 0],
+                    scale: [1, 1.2, 1], // Scale up slightly, then back
+                    opacity: [1, 0.8, 1], // Optional: slight fade to enhance effect
                   }}
                   transition={{
-                    delay: 2,
-                    duration: 2, // Flight duration
-                    repeat: Infinity,
-                    times: [0, 0.5, 1],
-                    repeatType: 'loop',
+                    duration: 1.5, // Pulse duration
+                    repeat: Infinity, // Infinite loop
                     ease: 'easeInOut',
-                    repeatDelay: 1, // Small delay before next launch
                   }}
                 >
-                  <RocketIcon />
+                  <StarsIcon />
                 </motion.div>
-                <span className="relative z-10">FAST GROWING AGENCY</span>
+
+                <span className="relative z-10">
+                  CREATIVITY TAILORED TO YOUR TASTE
+                </span>
                 {/* Sparkle Effects - Paused during scroll */}
                 <motion.div
                   className="absolute -right-1 -top-1"
@@ -172,44 +153,42 @@ const HeroSection = () => {
                   hidden: { opacity: 0 },
                   visible: { opacity: 1 },
                 }}
-                className="text-center md:max-w-[570px] md:text-left"
+                className="text-center md:max-w-[570px]"
               >
                 {/* Split text animation */}
-                {'Fueling Brands with Next-Level Design & Tech'
-                  .split(' ')
-                  .map((word, i) => (
-                    <motion.span
-                      key={i}
-                      variants={{
-                        hidden: {
-                          opacity: 0,
-                          y: 50,
-                          rotateX: -90,
-                          filter: 'blur(10px)',
-                        },
-                        visible: {
-                          opacity: 1,
-                          y: 0,
-                          rotateX: 0,
-                          filter: 'blur(0px)',
-                        },
-                      }}
-                      transition={{
-                        duration: 0.8,
-                        delay: i * 0.1,
-                        type: 'spring',
-                        bounce: 0.4,
-                      }}
-                      className="mr-2 inline-block"
-                      whileHover={{
-                        scale: 1.05,
-                        color: '#FE0002',
-                        transition: { duration: 0.2 },
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
+                {'Bold Brands. Brilliant Results'.split(' ').map((word, i) => (
+                  <motion.span
+                    key={i}
+                    variants={{
+                      hidden: {
+                        opacity: 0,
+                        y: 50,
+                        rotateX: -90,
+                        filter: 'blur(10px)',
+                      },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        rotateX: 0,
+                        filter: 'blur(0px)',
+                      },
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      delay: i * 0.1,
+                      type: 'spring',
+                      bounce: 0.4,
+                    }}
+                    className="mr-2 inline-block"
+                    whileHover={{
+                      scale: 1.05,
+                      color: '#FE0002',
+                      transition: { duration: 0.2 },
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
               </motion.h1>
             </div>
 
@@ -284,129 +263,10 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-
-          {/* Professional Image Section with Animated Corners */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotateY: 45 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.3,
-              type: 'spring',
-              bounce: 0.2,
-            }}
-            className="relative"
-            style={{ y: y2 }}
-          >
-            {/* Main Image Container - Clean and Professional */}
-            <motion.div
-              className="relative rounded-3xl bg-[#FAF6F6] p-4 sm:rounded-[40px] sm:p-6"
-              whileHover={{
-                shadow: '0 12px 40px rgb(0,0,0,0.12)',
-                scale: 1.02,
-                transition: { duration: 0.3 },
-              }}
-            >
-              <div className="relative z-10 overflow-hidden rounded-2xl sm:rounded-3xl">
-                <ImageCarousel images={carouselImages} duration={4000} />
-              </div>
-
-              {/* Animated Yellow Corner Decoration */}
-              <motion.div
-                className="absolute -right-2 -top-2 size-6 rounded-full shadow-lg"
-                style={{
-                  background:
-                    'linear-gradient(135deg, #fbbf24, #f59e0b, #d97706)',
-                }}
-                animate={
-                  isScrolling
-                    ? {} // Still during scroll
-                    : {
-                        scale: [1, 1.3, 1],
-                        boxShadow: [
-                          '0 4px 15px rgba(251, 191, 36, 0.4)',
-                          '0 8px 25px rgba(251, 191, 36, 0.6)',
-                          '0 4px 15px rgba(251, 191, 36, 0.4)',
-                        ],
-                      }
-                }
-                transition={{
-                  duration: 3,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: 'easeInOut',
-                }}
-              >
-                {/* Inner glow effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-300 to-orange-400"
-                  animate={
-                    isScrolling
-                      ? {}
-                      : {
-                          opacity: [0.8, 1, 0.8],
-                          scale: [0.8, 1, 0.8],
-                        }
-                  }
-                  transition={{
-                    duration: 2,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: 'easeInOut',
-                    delay: 0.5,
-                  }}
-                />
-              </motion.div>
-
-              {/* Animated Blue Corner Decoration */}
-              <motion.div
-                className="absolute -bottom-2 -left-2 size-4 rounded-full shadow-lg"
-                style={{
-                  background:
-                    'linear-gradient(135deg, #60a5fa, #3b82f6, #1d4ed8)',
-                }}
-                animate={
-                  isScrolling
-                    ? {} // Still during scroll
-                    : {
-                        scale: [1, 1.4, 1],
-                        boxShadow: [
-                          '0 4px 15px rgba(96, 165, 250, 0.4)',
-                          '0 8px 25px rgba(96, 165, 250, 0.6)',
-                          '0 4px 15px rgba(96, 165, 250, 0.4)',
-                        ],
-                      }
-                }
-                transition={{
-                  duration: 2.5,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: 'easeInOut',
-                  delay: 1,
-                }}
-              >
-                {/* Inner glow effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300 to-purple-400"
-                  animate={
-                    isScrolling
-                      ? {}
-                      : {
-                          opacity: [0.7, 1, 0.7],
-                          scale: [0.9, 1.1, 0.9],
-                        }
-                  }
-                  transition={{
-                    duration: 1.8,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: 'easeInOut',
-                    delay: 1.5,
-                  }}
-                />
-              </motion.div>
-            </motion.div>
-          </motion.div>
         </div>
       </div>
     </motion.header>
   );
 };
 
-export default HeroSection;
+export default AboutHeroSection;

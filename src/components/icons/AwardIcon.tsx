@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-const BrandingIcon = (props: SVGProps<SVGSVGElement>) => {
+const AwardIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,4 +24,4 @@ const BrandingIcon = (props: SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default BrandingIcon;
+export default AwardIcon;

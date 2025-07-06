@@ -25,8 +25,8 @@ const BrandingIcon = (props: SVGProps<SVGSVGElement>) => {
           y2="29.2638"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2BFD60" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#2BFD60" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
       </defs>
     </svg>

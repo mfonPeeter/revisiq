@@ -1,7 +1,10 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import Image from 'next/image';
 import { BoldHandStarsIcon } from '../icons';
+import Chip from '../ui/chip';
 
 const TestimonialSection = () => {
   const testimonials = [
@@ -32,33 +35,51 @@ const TestimonialSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative mx-auto max-w-[1770px] overflow-hidden">
       <div className="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-red-500/5 blur-[120px]"></div>
-
-      <div className="relative space-y-12 pl-16">
+      <div className="relative space-y-12 lg:pl-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center gap-y-7"
+          className="flex flex-col items-center gap-y-4 px-5 lg:gap-y-7"
         >
-          <div className="flex w-fit items-center gap-x-2 rounded-3xl border border-[#E1E1E1] px-4 py-2 text-sm font-medium text-[#898989]">
-            <BoldHandStarsIcon />
-            GUARANTEED SATISFACTION
-          </div>
-          <h2>Our Client's Feedback</h2>
+          <Chip
+            icon={<BoldHandStarsIcon className="size-4 md:size-auto" />}
+            label=" GUARANTEED SATISFACTION"
+          />
+          <h2>Our Client&apos;s Feedback</h2>
         </motion.div>
-
         <div className="flex size-full items-end">
-          <div className="relative size-full min-h-[635px]">
-            <Image
-              src="/images/clients-feedback/generic-client.png"
-              alt="Generic Client"
-              width={337}
-              height={517}
-            />
-            <div className="absolute -bottom-0">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative hidden size-full min-h-[635px] max-w-[380px] lg:block"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="h-[517px] w-[337px]"
+            >
+              <Image
+                src="/images/clients-feedback/generic-client.png"
+                alt="Generic Client"
+                width={337}
+                height={517}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="absolute -bottom-0"
+            >
               <span className="flex items-center gap-1.5 text-6xl font-medium text-[#211616]">
                 4.9
                 <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -66,29 +87,33 @@ const TestimonialSection = () => {
               <span className="inline-block max-w-[200px] text-lg font-medium text-[#282828]">
                 Average rating from our clients
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           {/* Infinite testimonial slider with fade effect */}
-          <div className="relative overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative overflow-hidden"
+          >
             {/* Fade effect on edges */}
             <div className="absolute bottom-0 left-0 top-0 z-10 w-16 bg-gradient-to-r from-white to-transparent"></div>
-
             <div className="flex overflow-hidden">
               <div className="animate-testimonial-scroll-smooth flex">
                 {[...testimonials, ...testimonials].map(
                   (testimonial, index) => (
-                    <div key={index} className="mx-4">
+                    <div key={index} className="mx-4 lg:mx-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 392 585"
-                        className="h-[586px] w-[394px]"
+                        className="h-[480px] w-[320px] lg:h-[550px] lg:w-[394px]"
                         preserveAspectRatio="xMidYMid meet"
                       >
                         <path
                           d="M0 544.42V40.4199C0 18.3285 17.9087 0.419922 40.0001 0.419922H308.276C319.531 0.419922 330.264 5.16113 337.844 13.4804L381.568 61.47C388.28 68.8368 392 78.4437 392 88.4095V544.42C392 566.511 374.091 584.42 352 584.42H40C17.9086 584.42 0 566.511 0 544.42Z"
                           fill="#FFF9F9"
                         />
-
                         <foreignObject
                           x="0"
                           y="0"
@@ -110,13 +135,10 @@ const TestimonialSection = () => {
                                 ))}
                               </div>
                             </div>
-
                             <p className="mb-2 text-xl font-medium text-[#535353]">
                               {testimonial.text}
                             </p>
-
                             <div className="flex-grow" />
-
                             <div className="mt-auto flex items-center gap-3">
                               <div className="flex size-12 items-center justify-center rounded-full bg-[#D1D1D1] font-bold text-white">
                                 {testimonial.author.charAt(0)}
@@ -138,7 +160,7 @@ const TestimonialSection = () => {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

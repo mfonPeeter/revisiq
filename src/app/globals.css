@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -19,19 +23,23 @@
   }
 
   h1 {
-    @apply text-4xl font-semibold leading-[73px] text-[#040404] md:text-5xl lg:text-6xl;
+    @apply text-4xl font-semibold leading-[45px] text-[#040404] lg:text-5xl lg:leading-[60px] xl:text-6xl xl:leading-[73px];
   }
 
   h2 {
-    @apply text-4xl font-semibold text-black md:text-5xl;
+    @apply text-center text-3xl font-semibold text-black sm:text-4xl md:text-5xl;
   }
 
   h3 {
-    @apply text-3xl font-semibold text-black;
+    @apply text-2xl font-semibold text-black md:text-3xl;
   }
 
   h4 {
     @apply text-[28px] font-medium text-black;
+  }
+
+  h5 {
+    @apply text-2xl font-medium text-[#040404];
   }
 
   :root {
@@ -103,6 +111,26 @@
   100% {
     transform: translateX(calc(-400px * 4 - 32px));
   }
+}
+
+@keyframes icon-bounce {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-icon-bounce {
+  animation: icon-bounce 0.5s ease-out;
 }
 
 .animate-marquee-smooth {

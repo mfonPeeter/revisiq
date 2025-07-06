@@ -1,6 +1,6 @@
-import Link from 'next/link';
+'use client';
+
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import {
   BrandingIcon,
   WebDesignIcon,
@@ -8,6 +8,7 @@ import {
   SocialMediaIcon,
   AwardIcon,
 } from '../icons';
+import Chip from '../ui/chip';
 
 const services = [
   {
@@ -46,70 +47,84 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section
-      className="relative z-0 border py-28"
-      style={{
-        maskImage:
-          'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
-        WebkitMaskImage:
-          'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
-      }}
-    >
+    <section id="services" className="relative z-10">
       {/* Blurred background */}
-      <div className="absolute inset-0 bottom-[-400px] top-[-400px] -z-10 bg-[#FE000214] blur-[400px]" />
-
-      <div className="container mx-auto space-y-12 px-6">
+      <div className="absolute inset-0 -z-10 bg-[#FE000214] blur-[400px]" />
+      <div className="mx-auto max-w-[1234px] space-y-12 px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center gap-y-7"
+          className="flex flex-col items-center gap-y-4 lg:gap-y-7"
         >
-          <div className="flex w-fit items-center gap-x-2 rounded-3xl border border-[#E1E1E1] px-4 py-2 text-sm font-medium text-[#898989]">
-            <AwardIcon />
-            PREMIUM AND TIMELY DELIVERY
-          </div>
+          <Chip
+            icon={<AwardIcon className="size-4 md:size-auto" />}
+            label="PREMIUM AND TIMELY DELIVERY"
+          />
           <h2>Our Services</h2>
         </motion.div>
-
-        <div className="rounded-[40px] bg-white p-9">
+        <div className="rounded-3xl bg-white p-7 sm:rounded-[40px] sm:p-9">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.2 } },
+            }}
           >
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {services.map(
                 ({ heading, description, icons, iconBg, bgColor }) => (
                   <motion.div
                     key={heading}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    viewport={{ once: true }}
-                    className="rounded-[40px] px-11 py-12"
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="group relative overflow-hidden rounded-3xl p-8 transition-all duration-500 ease-out hover:-translate-y-2 sm:rounded-[40px] sm:p-11 md:p-8 lg:px-11 lg:py-12"
                     style={{ backgroundColor: bgColor }}
                   >
-                    <div className="mb-5 flex">
+                    {/* Subtle gradient overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                    {/* Animated border glow */}
+                    <div
+                      className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 sm:rounded-[40px]"
+                      style={{
+                        background: `linear-gradient(135deg, transparent 0%, ${iconBg}20 50%, transparent 100%)`,
+                      }}
+                    />
+
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      className="relative z-10 mb-5 flex"
+                    >
                       <div
-                        className="flex size-14 items-center justify-center rounded-full"
-                        style={{ backgroundColor: iconBg }}
+                        className="flex size-14 items-center justify-center rounded-full transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg"
+                        style={{
+                          backgroundColor: iconBg,
+                          boxShadow: `0 0 0 0 ${iconBg}40`,
+                        }}
                       >
-                        {icons}
+                        <div className="transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
+                          {icons}
+                        </div>
                       </div>
-                      <Link
-                        href="/projects"
-                        className="group flex size-14 items-center justify-center rounded-full border-[0.5px] border-[#9D9D9D] hover:bg-black"
-                      >
-                        <ArrowRight className="h-6 w-6 -rotate-45 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
-                      </Link>
-                    </div>
-                    <h3 className="mb-3.5">{heading}</h3>
-                    <p className="text-lg font-medium leading-relaxed text-[#888]">
+                    </motion.div>
+                    <h3 className="relative z-10 mb-3.5 transition-colors duration-300 group-hover:text-gray-800">
+                      {heading}
+                    </h3>
+                    <p className="relative z-10 text-lg font-medium leading-relaxed text-[#888] transition-colors duration-300 group-hover:text-gray-600">
                       {description}
                     </p>
+
+                    {/* Subtle shine effect */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-all duration-700 group-hover:animate-pulse group-hover:opacity-100" />
                   </motion.div>
                 )
               )}

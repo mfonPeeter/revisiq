@@ -1,33 +1,44 @@
+'use client';
+
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BoldHandLoveIcon } from '../icons';
+import Chip from '../ui/chip';
 
 const BenefitsSection = () => {
   return (
     <section>
-      <div className="container relative mx-auto space-y-12 px-6">
+      <div className="relative mx-auto max-w-[800px] space-y-12 px-5 lg:max-w-[1400px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center gap-y-7"
+          className="flex flex-col items-center gap-y-4 lg:gap-y-7"
         >
-          <div className="flex w-fit items-center gap-x-2 rounded-3xl border border-[#E1E1E1] px-4 py-2 text-sm font-medium text-[#898989]">
-            <BoldHandLoveIcon />
-            WE&apos;RE HERE FOR YOU
-          </div>
-          <h2 className="mb-2 text-4xl font-bold text-zinc-900 md:text-5xl">
-            Benefits for You
-          </h2>
+          <Chip
+            icon={<BoldHandLoveIcon className="size-4 md:size-auto" />}
+            label="WE'RE HERE FOR YOU"
+          />
+          <h2>Benefits for You</h2>
         </motion.div>
-
-        <div className="grid grid-cols-1 gap-[18px] md:grid-cols-2 lg:grid-cols-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+          className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-4 lg:px-0"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 40, scale: 0.95 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="group cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -48,11 +59,10 @@ const BenefitsSection = () => {
                   y2="584.42"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#F6FAF7" />
-                  <stop offset="1" stop-color="#EBFFF0" />
+                  <stop stopColor="#F6FAF7" />
+                  <stop offset="1" stopColor="#EBFFF0" />
                 </linearGradient>
               </defs>
-
               <foreignObject
                 x="0"
                 y="0"
@@ -60,32 +70,47 @@ const BenefitsSection = () => {
                 height="100%"
                 xmlns="http://www.w3.org/1999/xhtml"
               >
-                <div className="space-y-8 px-9 py-[90px]">
-                  <div className="w-fit rounded-full bg-[#2EB853] p-5">
+                <div className="space-y-8 px-9 py-20 sm:py-12">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="w-fit rounded-full bg-[#2EB853] p-5"
+                  >
                     <Image
                       src="/svgs/revisiq-plain-white-logo.svg"
                       alt="Revisiq logo without text"
                       width={37}
                       height={41}
+                      className="transition-transform duration-300 group-hover:scale-110"
                     />
-                  </div>
-                  <div className="text-3xl font-semibold">
-                    <p>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    className="text-2xl font-semibold md:text-3xl"
+                  >
+                    <p className="leading-[40px] md:leading-[49px]">
                       You&apos;re not just getting a service provider—
                       you&apos;re gaining a strategic partner committed to your
                       success.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
               </foreignObject>
             </svg>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 40, scale: 0.95 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="group cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,11 +131,10 @@ const BenefitsSection = () => {
                   y2="426.92"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#FFFCF3" />
-                  <stop offset="1" stop-color="#FFF3C5" />
+                  <stop stopColor="#FFFCF3" />
+                  <stop offset="1" stopColor="#FFF3C5" />
                 </linearGradient>
               </defs>
-
               <foreignObject
                 x="0"
                 y="0"
@@ -118,31 +142,47 @@ const BenefitsSection = () => {
                 height="100%"
                 xmlns="http://www.w3.org/1999/xhtml"
               >
-                <div className="mb-8 px-9 pt-11">
-                  <h3 className="mb-5">End-to-End Support</h3>
-                  <p className="font-medium text-[#AA8600]">
-                    We guide you from idea to launch and beyond, ensuring a
-                    smooth and scalable growth path.
-                  </p>
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/benefits/end-to-end-support-img.png"
-                    alt="End to End Support"
-                    width={252}
-                    height={236}
-                  />
+                <div className="flex h-full flex-col">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="mb-8 px-9 pt-11"
+                  >
+                    <h3 className="mb-5">End-to-End Support</h3>
+                    <p className="font-medium text-[#AA8600]">
+                      We guide you from idea to launch and beyond, ensuring a
+                      smooth and scalable growth path.
+                    </p>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    className="mt-auto flex justify-center"
+                  >
+                    <Image
+                      src="/images/benefits/end-to-end-support-img.png"
+                      alt="End to End Support"
+                      width={252}
+                      height={236}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </motion.div>
                 </div>
               </foreignObject>
             </svg>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className='self-end'
+            variants={{
+              hidden: { opacity: 0, y: 40, scale: 0.95 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="group cursor-pointer self-end"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -163,11 +203,10 @@ const BenefitsSection = () => {
                   y2="445.42"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#FAF5FF" />
-                  <stop offset="1" stop-color="#F7EEFF" />
+                  <stop stopColor="#FAF5FF" />
+                  <stop offset="1" stopColor="#F7EEFF" />
                 </linearGradient>
               </defs>
-
               <foreignObject
                 x="0"
                 y="0"
@@ -175,31 +214,48 @@ const BenefitsSection = () => {
                 height="100%"
                 xmlns="http://www.w3.org/1999/xhtml"
               >
-                <div className="px-9 py-11">
-                  <h3 className="mb-5">Access to Top Tech Talent</h3>
-                  <p className="font-medium text-[#836B9B]">
-                    Revisiq provides highly skilled engineers, designers,
-                    content strategists and social media managers tailored to
-                    your needs.
-                  </p>
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/benefits/top-talent-img.png"
-                    alt="Top Talents"
-                    width={247}
-                    height={231}
-                  />
+                <div className="flex h-full flex-col">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="px-9 pt-11"
+                  >
+                    <h3 className="mb-5">Access to Top Tech Talent</h3>
+                    <p className="font-medium text-[#836B9B]">
+                      Revisiq provides highly skilled engineers, designers,
+                      content strategists and social media managers tailored to
+                      your needs.
+                    </p>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    className="mt-auto flex justify-center"
+                  >
+                    <Image
+                      src="/images/benefits/top-talent-img.png"
+                      alt="Top Talents"
+                      width={247}
+                      height={231}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </motion.div>
                 </div>
               </foreignObject>
             </svg>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 40, scale: 0.95 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="group cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -220,11 +276,10 @@ const BenefitsSection = () => {
                   y2="510.42"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#EEF7FF" />
-                  <stop offset="1" stop-color="#D4EAFF" />
+                  <stop stopColor="#EEF7FF" />
+                  <stop offset="1" stopColor="#D4EAFF" />
                 </linearGradient>
               </defs>
-
               <foreignObject
                 x="0"
                 y="0"
@@ -232,26 +287,39 @@ const BenefitsSection = () => {
                 height="100%"
                 xmlns="http://www.w3.org/1999/xhtml"
               >
-                <div className="px-9 pt-11">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="px-9 pt-11"
+                >
                   <h3 className="mb-5">Flexible Engagement Models</h3>
                   <p className="font-medium text-[#8D9DAC]">
                     We adapt to your needs—whether you need a full build website
                     design, branding, or a support team to enhance your existing
                     website.
                   </p>
-                </div>
-                <div className="flex justify-center">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="flex justify-center"
+                >
                   <Image
                     src="/images/benefits/flexible-engagment-img.png"
                     alt="Handshake"
                     width={338}
                     height={225}
+                    className="transition-transform duration-300 group-hover:scale-110"
                   />
-                </div>
+                </motion.div>
               </foreignObject>
             </svg>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

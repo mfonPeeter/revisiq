@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { inter } from './fonts';
+
+import NavBar from '@/components/layout/NavBar';
+import FooterWithCta from '@/components/layout/FooterWithCta';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -14,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        <NavBar />
+        <main className="mb-[80px] md:mb-[130px] lg:mb-[160px]">
+          {children}
+        </main>
+        <FooterWithCta />
+      </body>
     </html>
   );
 }
