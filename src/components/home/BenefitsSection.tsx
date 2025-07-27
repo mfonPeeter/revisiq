@@ -120,9 +120,9 @@ const BenefitsSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
-                    className="text-2xl font-semibold sm:text-3xl"
+                    className="text-3xl font-semibold sm:text-3xl"
                   >
-                    <p className="leading-[44px] sm:leading-[49px]">
+                    <p className="leading-[49px]">
                       You&apos;re not just getting a service provider—
                       you&apos;re gaining a strategic partner committed to your
                       success.
@@ -198,8 +198,8 @@ const BenefitsSection = () => {
                     viewport={{ once: true }}
                     className="mb-8 px-9 pt-11"
                   >
-                    <h3 className="mb-5">End-to-End Support</h3>
-                    <p className="font-medium text-[#AA8600]">
+                    <h3 className="mb-5 text-3xl">End-to-End Support</h3>
+                    <p className="text-lg font-medium text-[#AA8600] lg:text-base">
                       We guide you from idea to launch and beyond, ensuring a
                       smooth and scalable growth path.
                     </p>
@@ -299,8 +299,8 @@ const BenefitsSection = () => {
                     viewport={{ once: true }}
                     className="px-9 pt-11"
                   >
-                    <h3 className="mb-5">Access to Top Tech Talent</h3>
-                    <p className="font-medium text-[#836B9B]">
+                    <h3 className="mb-5 text-3xl">Access to Top Tech Talent</h3>
+                    <p className="text-lg font-medium text-[#836B9B] lg:text-base">
                       Revisiq provides highly skilled engineers, designers,
                       content strategists and social media managers tailored to
                       your needs.
@@ -401,8 +401,10 @@ const BenefitsSection = () => {
                     viewport={{ once: true }}
                     className="px-9 pt-11"
                   >
-                    <h3 className="mb-5">Flexible Engagement Models</h3>
-                    <p className="font-medium text-[#8D9DAC]">
+                    <h3 className="mb-5 text-3xl">
+                      Flexible Engagement Models
+                    </h3>
+                    <p className="text-lg font-medium text-[#8D9DAC] lg:text-base">
                       We adapt to your needs—whether you need a full build
                       website design, branding, or a support team to enhance
                       your existing website.
