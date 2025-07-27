@@ -107,15 +107,15 @@ const BenefitsSection = () => {
                   y2="584.42"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stopColor="#D1FAE5" />
-                  <stop offset="0.5" stopColor="#A7F3D0" />
-                  <stop offset="1" stopColor="#6EE7B7" />
+                  <stop stopColor="#ECFDF5" />
+                  <stop offset="0.5" stopColor="#D1FAE5" />
+                  <stop offset="1" stopColor="#BBF7D0" />
                 </linearGradient>
               </defs>
               <path
                 d="M0 544.42V40.4199C0 18.3285 17.9086 0.419922 40 0.419922H255.529C267.947 0.419922 279.661 6.18729 287.233 16.0296L322.703 62.1358C328.083 69.1285 331 77.7036 331 86.5262V544.42C331 566.511 313.091 584.42 291 584.42H40C17.9086 584.42 0 566.511 0 544.42Z"
                 fill="url(#paint0_linear_103_339)"
-                className="transition-all duration-500 ease-out group-hover:fill-[url(#paint0_linear_103_339_hover)]"
+                className="transition-all duration-700 ease-out group-hover:fill-[url(#paint0_linear_103_339_hover)]"
               />
               <foreignObject
                 x="0"
@@ -205,15 +205,15 @@ const BenefitsSection = () => {
                   y2="426.92"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stopColor="#FEF3C7" />
-                  <stop offset="0.5" stopColor="#FDE047" />
-                  <stop offset="1" stopColor="#FACC15" />
+                  <stop stopColor="#FFFBEB" />
+                  <stop offset="0.5" stopColor="#FEF3C7" />
+                  <stop offset="1" stopColor="#FDE68A" />
                 </linearGradient>
               </defs>
               <path
                 d="M0 394.42V40.4199C0 18.3285 17.9086 0.419922 40 0.419922H237.351C248.264 0.419922 258.704 4.87893 266.249 12.7633L294.898 42.6982C302.023 50.1429 306 60.0501 306 70.3549V394.42C306 416.511 288.091 434.42 266 434.42H40C17.9086 434.42 0 416.511 0 394.42Z"
                 fill="url(#paint0_linear_103_348)"
-                className="transition-all duration-500 ease-out group-hover:fill-[url(#paint0_linear_103_348_hover)]"
+                className="transition-all duration-700 ease-out group-hover:fill-[url(#paint0_linear_103_348_hover)]"
               />
               <foreignObject
                 x="0"
@@ -306,15 +306,15 @@ const BenefitsSection = () => {
                   y2="445.42"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stopColor="#F3E8FF" />
-                  <stop offset="0.5" stopColor="#C4B5FD" />
-                  <stop offset="1" stopColor="#A78BFA" />
+                  <stop stopColor="#FDFCFF" />
+                  <stop offset="0.5" stopColor="#F3E8FF" />
+                  <stop offset="1" stopColor="#E9D5FF" />
                 </linearGradient>
               </defs>
               <path
                 d="M0 394.42V40.4199C0 18.3285 17.9086 0.419922 40 0.419922H237.351C248.264 0.419922 258.704 4.87893 266.249 12.7633L294.898 42.6982C302.023 50.1429 306 60.0502 306 70.3549V394.42C306 416.511 288.091 434.42 266 434.42H40C17.9086 434.42 0 416.511 0 394.42Z"
                 fill="url(#paint0_linear_103_359)"
-                className="transition-all duration-500 ease-out group-hover:fill-[url(#paint0_linear_103_359_hover)]"
+                className="transition-all duration-700 ease-out group-hover:fill-[url(#paint0_linear_103_359_hover)]"
               />
               <foreignObject
                 x="0"
@@ -405,15 +405,15 @@ const BenefitsSection = () => {
                   y2="510.42"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stopColor="#DBEAFE" />
-                  <stop offset="0.5" stopColor="#93C5FD" />
-                  <stop offset="1" stopColor="#60A5FA" />
+                  <stop stopColor="#F8FAFC" />
+                  <stop offset="0.5" stopColor="#E0F2FE" />
+                  <stop offset="1" stopColor="#BAE6FD" />
                 </linearGradient>
               </defs>
               <path
                 d="M0 470.42V40.4199C0 18.3285 17.9086 0.419922 40 0.419922H235.426C247.455 0.419922 258.845 5.83331 266.441 15.1604L297.015 52.7014C302.827 59.837 306 68.7582 306 77.9609V470.42C306 492.511 288.091 510.42 266 510.42H40C17.9086 510.42 0 492.511 0 470.42Z"
                 fill="url(#paint0_linear_103_367)"
-                className="transition-all duration-500 ease-out group-hover:fill-[url(#paint0_linear_103_367_hover)]"
+                className="transition-all duration-700 ease-out group-hover:fill-[url(#paint0_linear_103_367_hover)]"
               />
               <foreignObject
                 x="0"
