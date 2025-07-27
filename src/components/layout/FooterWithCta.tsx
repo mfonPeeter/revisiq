@@ -140,7 +140,7 @@ const FooterWithCta = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="block rounded-3xl bg-white px-8 py-10 sm:hidden"
+                className="block rounded-[30px] bg-white px-8 py-10 sm:hidden"
               >
                 <div className="mx-auto flex h-full max-w-[700px] items-center justify-center">
                   <div>

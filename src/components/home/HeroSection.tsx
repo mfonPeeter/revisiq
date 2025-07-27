@@ -69,7 +69,7 @@ const HeroSection = () => {
   return (
     <motion.header
       ref={heroRef}
-      className="relative overflow-hidden px-4 pb-6 pt-40 sm:px-8 sm:pt-36"
+      className="relative overflow-hidden px-4 pb-6 pt-40 sm:pl-14 sm:pr-12 sm:pt-36"
     >
       {/* Floating Particles */}
       <FloatingParticles isScrolling={isScrolling} />

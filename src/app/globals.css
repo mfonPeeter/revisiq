@@ -39,7 +39,11 @@ html {
   }
 
   h5 {
-    @apply text-2xl font-medium text-[#040404];
+    @apply text-xl font-medium text-[#040404] sm:text-2xl;
+  }
+
+  h6 {
+    @apply text-base font-semibold text-[#0A0404] sm:text-lg;
   }
 
   :root {

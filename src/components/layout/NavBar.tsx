@@ -20,7 +20,7 @@ const navLinks = [
   },
   {
     name: 'Pricing',
-    route: '/#pricing',
+    route: '/pricing',
   },
   {
     name: 'Services',

@@ -28,11 +28,6 @@ const brandings = [
     alt: 'Book Weenie',
     route: 'https://www.behance.net/gallery/184760971/BookWeenie',
   },
-  {
-    imgPath: 'branding-2.png',
-    alt: 'Ofiliates',
-    route: 'https://www.behance.net/gallery/182729247/Ofiliates',
-  },
 ];
 
 const BrandingTab = () => {

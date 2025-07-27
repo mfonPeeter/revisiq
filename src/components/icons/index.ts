@@ -23,3 +23,7 @@ export { default as ArrowRightIcon } from './ArrowRightIcon';
 export { default as TickIcon } from './TickIcon';
 export { default as StarIcon } from './StarIcon';
 export { default as StarsIcon } from './StarsIcon';
+export { default as PricingWebIcon } from './PricingWebIcon';
+export { default as PricingBrandIcon } from './PricingBrandIcon';
+export { default as PricingSocialIcon } from './PricingSocialIcon';
+export { default as MoveUpRightArrowIcon } from './MoveUpRightArrowIcon';
