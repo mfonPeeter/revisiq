@@ -413,7 +413,7 @@ const FooterWithCta = () => {
                     transition: { staggerChildren: 0.1, delayChildren: 1.1 },
                   },
                 }}
-                className="flex flex-col gap-5 md:flex-row md:gap-12"
+                className="flex flex-col items-center gap-5 md:flex-row md:gap-12"
               >
                 <motion.div
                   variants={{
