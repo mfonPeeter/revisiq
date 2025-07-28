@@ -27,3 +27,7 @@ export { default as PricingWebIcon } from './PricingWebIcon';
 export { default as PricingBrandIcon } from './PricingBrandIcon';
 export { default as PricingSocialIcon } from './PricingSocialIcon';
 export { default as MoveUpRightArrowIcon } from './MoveUpRightArrowIcon';
+export { default as SecureWebsitesIcon } from './SecureWebsitesIcon';
+export { default as StrongBrandingIcon } from './StrongBrandingIcon';
+export { default as LongPartnershipIcon } from './LongPartnershipIcon';
+export { default as TailoredForClientIcon } from './TailoredForClientIcon';

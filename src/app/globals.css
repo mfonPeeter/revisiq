@@ -31,7 +31,7 @@ html {
   }
 
   h3 {
-    @apply text-2xl font-semibold text-black md:text-3xl;
+    @apply text-2xl font-semibold text-black md:text-3xl md:leading-[42px];
   }
 
   h4 {
