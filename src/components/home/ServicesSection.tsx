@@ -125,7 +125,7 @@ const ServicesSection = () => {
                             {icons}
                           </div>
                         </div>
-                        <div className="flex size-[60px] items-center justify-center rounded-full border border-[##9D9D9D] text-black transition-colors duration-500 group-hover:bg-black group-hover:text-white">
+                        <div className="flex size-[60px] items-center justify-center rounded-full border border-[##9D9D9D] text-black">
                           <MoveUpRightArrowIcon className="transition-transform group-hover:translate-x-1" />
                         </div>
                       </motion.div>

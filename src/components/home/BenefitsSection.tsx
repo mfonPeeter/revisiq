@@ -74,99 +74,7 @@ const BenefitsSection = () => {
           className="xs:grid-cols-2 grid grid-cols-1 place-items-center gap-[18px] md:grid-cols-3 lg:grid-cols-4 lg:px-0"
         >
           {/* Card 1 - Strategic Partner */}
-          <motion.div variants={cardVariants}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 331 585"
-              fill="none"
-              className="group h-auto w-full"
-              style={{
-                maxWidth: '331px',
-                height: 'auto',
-                shapeRendering: 'geometricPrecision',
-                imageRendering: 'crisp-edges',
-              }}
-            >
-              <defs>
-                <linearGradient
-                  id="paint0_linear_103_339"
-                  x1="-8.00001"
-                  y1="-6.08007"
-                  x2="331"
-                  y2="584.42"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#F6FAF7" />
-                  <stop offset="1" stopColor="#EBFFF0" />
-                </linearGradient>
-                <linearGradient
-                  id="paint0_linear_103_339_hover"
-                  x1="-8.00001"
-                  y1="-6.08007"
-                  x2="331"
-                  y2="584.42"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#ECFDF5" />
-                  <stop offset="0.5" stopColor="#D1FAE5" />
-                  <stop offset="1" stopColor="#BBF7D0" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M0 544.42V40.4199C0 18.3285 17.9086 0.419922 40 0.419922H255.529C267.947 0.419922 279.661 6.18729 287.233 16.0296L322.703 62.1358C328.083 69.1285 331 77.7036 331 86.5262V544.42C331 566.511 313.091 584.42 291 584.42H40C17.9086 584.42 0 566.511 0 544.42Z"
-                fill="url(#paint0_linear_103_339)"
-                className="transition-all duration-700 ease-out group-hover:fill-[url(#paint0_linear_103_339_hover)]"
-              />
-              <foreignObject
-                x="0"
-                y="0"
-                width="331"
-                height="585"
-                style={{
-                  width: '331px',
-                  height: '585px',
-                  overflow: 'visible',
-                }}
-              >
-                <div
-                  style={{
-                    width: '331px',
-                    height: '585px',
-                    padding: '36px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    boxSizing: 'border-box',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 'fit-content',
-                      borderRadius: '50%',
-                      backgroundColor: '#2EB853',
-                      padding: '20px',
-                      marginBottom: '32px',
-                    }}
-                  >
-                    <Image
-                      src="/svgs/revisiq-plain-white-logo.svg"
-                      alt="Revisiq logo without text"
-                      width={37}
-                      height={41}
-                    />
-                  </div>
-                  <motion.div variants={textVariants}>
-                    <div className="text-2xl font-semibold sm:text-3xl">
-                      <p className="leading-[44px] sm:leading-[49px]">
-                        You&apos;re not just getting a service provider—
-                        you&apos;re gaining a strategic partner committed to
-                        your success.
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
-              </foreignObject>
-            </svg>
-          </motion.div>
+          <FirstCard />
 
           {/* Card 2 - End-to-End Support */}
           <motion.div
@@ -479,6 +387,200 @@ const BenefitsSection = () => {
         </motion.div>
       </motion.div>
     </section>
+  );
+};
+
+const FirstCard = () => {
+  return (
+    <motion.div variants={cardVariants}>
+      {/* MOBILE */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="331"
+        height="557"
+        viewBox="0 0 331 557"
+        fill="none"
+        className="group block h-auto w-full sm:hidden"
+        style={{
+          maxWidth: '331px',
+          height: 'auto',
+          shapeRendering: 'geometricPrecision',
+          imageRendering: 'crisp-edges',
+        }}
+      >
+        <defs>
+          <linearGradient
+            id="paint0_linear_607_511"
+            x1="-8.00001"
+            y1="-6.19948"
+            x2="307.442"
+            y2="569.899"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#F6FAF7" />
+            <stop offset="1" stopColor="#EBFFF0" />
+          </linearGradient>
+          <linearGradient
+            id="paint0_linear_607_511_hover"
+            x1="-8.00001"
+            y1="-6.19948"
+            x2="307.442"
+            y2="569.899"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#ECFDF5" />
+            <stop offset="0.5" stopColor="#D1FAE5" />
+            <stop offset="1" stopColor="#BBF7D0" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0 517V40C0 17.9086 17.9086 0 40 0H256.098C268.193 0 279.638 5.47267 287.232 14.8867L322.134 58.1565C327.871 65.2691 331 74.1317 331 83.2698V517C331 539.091 313.091 557 291 557H40C17.9086 557 0 539.091 0 517Z"
+          fill="url(#paint0_linear_607_511)"
+          className="transition-all duration-500 ease-out group-hover:fill-[url(#paint0_linear_607_511_hover)]"
+        />
+        <foreignObject
+          x="0"
+          y="0"
+          width="331"
+          height="557"
+          style={{
+            width: '331px',
+            height: '557px',
+            overflow: 'visible',
+          }}
+        >
+          <div
+            style={{
+              width: '331px',
+              height: '557px',
+              paddingInline: '32px',
+              paddingBottom: '32px',
+              paddingTop: '53px',
+              display: 'flex',
+              flexDirection: 'column',
+              boxSizing: 'border-box',
+            }}
+          >
+            <div
+              style={{
+                width: 'fit-content',
+                borderRadius: '50%',
+                backgroundColor: '#2EB853',
+                padding: '18px',
+                marginBottom: '28px',
+              }}
+            >
+              <Image
+                src="/svgs/revisiq-plain-white-logo.svg"
+                alt="Revisiq logo without text"
+                width={33}
+                height={37}
+              />
+            </div>
+            <motion.div variants={textVariants}>
+              <div className="text-[26px] font-semibold">
+                <p className="leading-[49px]">
+                  You&apos;re not just getting a service provider— you&apos;re
+                  gaining a strategic partner committed to your success.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </foreignObject>
+      </svg>
+
+      {/* TABLET/DESKTOP */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 331 585"
+        fill="none"
+        className="group hidden h-auto w-full sm:block"
+        style={{
+          maxWidth: '331px',
+          height: 'auto',
+          shapeRendering: 'geometricPrecision',
+          imageRendering: 'crisp-edges',
+        }}
+      >
+        <defs>
+          <linearGradient
+            id="paint0_linear_103_339"
+            x1="-8.00001"
+            y1="-6.08007"
+            x2="331"
+            y2="584.42"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#F6FAF7" />
+            <stop offset="1" stopColor="#EBFFF0" />
+          </linearGradient>
+          <linearGradient
+            id="paint0_linear_103_339_hover"
+            x1="-8.00001"
+            y1="-6.08007"
+            x2="331"
+            y2="584.42"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#ECFDF5" />
+            <stop offset="0.5" stopColor="#D1FAE5" />
+            <stop offset="1" stopColor="#BBF7D0" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0 544.42V40.4199C0 18.3285 17.9086 0.419922 40 0.419922H255.529C267.947 0.419922 279.661 6.18729 287.233 16.0296L322.703 62.1358C328.083 69.1285 331 77.7036 331 86.5262V544.42C331 566.511 313.091 584.42 291 584.42H40C17.9086 584.42 0 566.511 0 544.42Z"
+          fill="url(#paint0_linear_103_339)"
+          className="transition-all duration-500 ease-out group-hover:fill-[url(#paint0_linear_103_339_hover)]"
+        />
+        <foreignObject
+          x="0"
+          y="0"
+          width="331"
+          height="585"
+          style={{
+            width: '331px',
+            height: '585px',
+            overflow: 'visible',
+          }}
+        >
+          <div
+            style={{
+              width: '331px',
+              height: '585px',
+              padding: '36px',
+              display: 'flex',
+              flexDirection: 'column',
+              boxSizing: 'border-box',
+            }}
+          >
+            <div
+              style={{
+                width: 'fit-content',
+                borderRadius: '50%',
+                backgroundColor: '#2EB853',
+                padding: '20px',
+                marginBottom: '32px',
+              }}
+            >
+              <Image
+                src="/svgs/revisiq-plain-white-logo.svg"
+                alt="Revisiq logo without text"
+                width={37}
+                height={41}
+              />
+            </div>
+            <motion.div variants={textVariants}>
+              <div className="text-3xl font-semibold">
+                <p className="leading-[49px]">
+                  You&apos;re not just getting a service provider— you&apos;re
+                  gaining a strategic partner committed to your success.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </foreignObject>
+      </svg>
+    </motion.div>
   );
 };
 
