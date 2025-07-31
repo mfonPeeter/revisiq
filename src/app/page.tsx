@@ -7,6 +7,7 @@ import ServicesSection from '@/components/home/ServicesSection';
 import TestimonialSection from '@/components/home/TestimonialSection';
 import BenefitsSection from '@/components/home/BenefitsSection';
 import PricingSection from '@/components/home/PricingSection';
+import WhyClientsLoveUs from '@/components/shared/WhyClientsLoveUs';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <TestimonialSection />
         <BenefitsSection />
         <PricingSection />
+        <WhyClientsLoveUs />
       </div>
     </div>
   );

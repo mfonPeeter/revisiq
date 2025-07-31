@@ -82,6 +82,15 @@ const services = {
       'Advanced Performance Analytics',
     ],
   },
+  branding: [
+    'Logo Suite',
+    'Brand Color Palette',
+    'Typography System',
+    'Brand Style Guide',
+    'Stationery & Business Collateral',
+    'Digital & Social Media Assets',
+    'Mockups / Presentation',
+  ],
 };
 
 // Animation variants for cards
@@ -414,6 +423,56 @@ const ServicesPricing = () => {
               </h3>
               <ul className="mb-5 space-y-3 text-sm sm:text-base md:text-lg">
                 {services.socialMedia.full.map((service, index) => (
+                  <li key={index} className="flex items-start gap-3.5">
+                    <div className="mt-1">
+                      <TickIcon />
+                    </div>
+                    {service}
+                  </li>
+                ))}
+              </ul>
+              <ButtonLink label="Choose plan" href="mailto:revisiq@gmail.com" />
+            </div>
+          </motion.section>
+        </motion.section>
+
+        {/* Logo Design / Branding Services */}
+        <motion.section
+          id="logo-design-branding"
+          className="space-y-5"
+          variants={sectionVariants}
+        >
+          <motion.h2
+            className="text-center text-2xl font-semibold sm:text-3xl md:text-[40px]"
+            variants={textVariants}
+          >
+            Logo Design / Branding Services
+          </motion.h2>
+
+          <motion.section
+            className="space-y-5 rounded-3xl bg-white px-6 py-7 sm:p-9"
+            variants={cardVariants}
+          >
+            <div>
+              <div className="xs:flex-row xs:items-start mb-2 flex flex-col items-center gap-2.5">
+                <div className="mt-1">
+                  <PremiumIcon />
+                </div>
+                <h3 className="xs:text-left text-center text-xl font-semibold text-black sm:text-2xl md:text-3xl">
+                  Brand Identity / Logo Design
+                </h3>
+              </div>
+              <p className="xs:text-left text-center text-base text-[#747474] sm:text-xl">
+                Ideal For: New brands seeking an identity and existing brands
+                looking for a unique rebrand.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-[#F3E4E4] px-6 py-7 sm:p-9">
+              <h3 className="mb-3 text-lg font-semibold text-black sm:text-2xl md:text-3xl">
+                Starting from $1,500
+              </h3>
+              <ul className="mb-5 space-y-3 text-sm sm:text-base md:text-lg">
+                {services.branding.map((service, index) => (
                   <li key={index} className="flex items-start gap-3.5">
                     <div className="mt-1">
                       <TickIcon />

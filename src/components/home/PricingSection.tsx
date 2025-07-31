@@ -18,10 +18,10 @@ const pricingPlans = [
     route: '/pricing#web-design-and-development-packages',
   },
   {
-    plan: 'Branding',
+    plan: 'Logo Design / Branding',
     icon: <PricingBrandIcon />,
     price: '$1,500',
-    route: '',
+    route: 'logo-design-branding',
   },
   {
     plan: 'Social Media Management',

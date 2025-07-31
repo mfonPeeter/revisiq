@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 import ServicesPricing from '@/components/pricing/ServicesPricing';
-import WhyClientsLoveUs from '@/components/pricing/WhyClientsLoveUs';
+import WhyClientsLoveUs from '@/components/shared/WhyClientsLoveUs';
 
 const PricingPage = () => {
   return (

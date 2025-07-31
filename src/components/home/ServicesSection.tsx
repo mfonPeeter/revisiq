@@ -17,10 +17,10 @@ const services = [
     icons: <BrandingIcon />,
     iconBg: '#55E679',
     bgColor: '#F6FAF7',
-    heading: 'Branding',
+    heading: 'Logo Design / Branding',
     description:
       'We shape distinctive brand identities that capture attention, build trust, and position your business for lasting impact.',
-    route: '',
+    route: 'logo-design-branding',
   },
   {
     icons: <WebDesignIcon />,
