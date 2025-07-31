@@ -10,15 +10,15 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       rating: 5.0,
-      text: "Exceptional service and creativity! From the initial concept to the final product, their team was dedicated, responsive, and incredibly talented. They took our project to the next level, and we couldn't be happier with the results.",
-      author: 'Peter Chandler',
-      company: 'Acme Inc.',
+      text: 'Working with Revisiq was a smooth and enjoyable experience. They delivered a well-designed, user-friendly website for our conference that made it easy for attendees to register, submit abstracts, and make payments through Paystack.',
+      author: 'Utibeabasi Umanah',
+      company: 'DevOps Engineer',
     },
     {
       rating: 5.0,
-      text: 'Exceptional service and creativity! From the initial concept to the final product, their team was dedicated, responsive, and incredibly talented.',
-      author: 'Sarah Johnson',
-      company: 'Globex Corp',
+      text: 'Big thanks to the Revisiq team for the beautiful website! You really nailed the look and feel we were going for, and I’m especially impressed by how fast you got it done.',
+      author: 'Joshua Johnson',
+      company: 'Eljey Enterprise',
     },
     {
       rating: 5.0,
