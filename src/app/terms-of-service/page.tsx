@@ -8,16 +8,29 @@ import { StarIcon } from '@/components/icons';
 const privacyData = {
   servicesOffered: [
     'Website Design and Development',
-    'Brand Identity Design',
+    'Logo Design / Branding',
     'Content Strategy',
     'Social Media Management',
   ],
-  paymentTerms: [
-    'Clients can choose to pay 50%, 70%, or 100% upfront before the commencement of any project.',
-    'The remaining balance (if not fully paid upfront) is due upon project completion before handover, website launch, or delivery of final files.',
-    'Invoices have a validity period. If a client fails to pay before the invoice expires, the invoice becomes void. The client must request a new invoice; old invoices must not be paid after expiration.',
-    'Ongoing monthly services (e.g., social media management) are billed monthly in advance.',
-  ],
+  paymentTerms: {
+    webDesign: [
+      {
+        boldText: 'Starter Package:',
+        normalText:
+          'A single payment of 100% upfront is required to commence work.',
+      },
+      {
+        boldText: 'Growth Package:',
+        normalText:
+          'Payments are typically split into two milestones: 50% upfront to commence the project and 50% upon final design approval before development begins.',
+      },
+      {
+        boldText: 'Premium Package:',
+        normalText:
+          'Payments are typically split into three milestones: 30% upfront to commence the project, 40% upon final design approval, and the final 30% upon project completion before launch or final file handover.',
+      },
+    ],
+  },
   projectProcess: [
     {
       boldText: 'Starter Package:',
@@ -36,7 +49,7 @@ const privacyData = {
         'An 80% refund will be issued if the client cancels before any work has started. 20% is retained as a processing and commitment fee.',
     },
     {
-      boldText: 'During Design Phase (Growth & Premium Packages):',
+      boldText: 'During Design Phase (Web & Branding):',
       normalText:
         'If canceled after the first design concept or first revision, a 50% refund of the upfront payment is issued.',
       normalText2:
@@ -45,7 +58,7 @@ const privacyData = {
     {
       boldText: 'Starter Package:',
       normalText:
-        'If canceled after the single included revision round, a 50% refund is issued.',
+        'If canceled after the single included revision round, a 50% refund of the upfront payment is issued.',
     },
     {
       boldText: 'After Design Approval & Development Commencement:',
@@ -69,7 +82,7 @@ const privacyData = {
   thirdPartyServices: [
     'Projects may involve third-party services (hosting, plugins, APIs, analytics, etc.).',
     'Revisiq assists with integration but is not responsible for downtime, errors, or issues caused by third-party platforms or software.',
-    'Costs related to third-party services (domains, hosting, premium tools) are the client’s responsibility unless explicitly included in the package.',
+    "Costs related to third-party services (domains, hosting, premium tools) are the client's responsibility unless explicitly included in the package.",
   ],
   warrantyAndSupport: [
     'Premium Website clients receive 30 days of free post-launch support, covering bug fixes and minor adjustments.',
@@ -81,6 +94,7 @@ const privacyData = {
     'Revisiq is not liable for any direct, indirect, incidental, or consequential damages arising from the use of our services or deliverables.',
     'This includes but is not limited to loss of profits, data loss, third-party service failures, or downtime.',
     'Our total liability for any claim shall not exceed the total amount paid by the client for the specific service in question.',
+    'Revisiq is not liable for legal or copyright issues related to content provided by the client.',
   ],
   termination: [
     'The client violates these Terms.',
@@ -210,16 +224,60 @@ const TermsOfServicePage = () => {
 
             <div id="payment-terms" className="space-y-5">
               <h3>Payment Terms</h3>
+              <p>
+                Payments are structured according to the service package to
+                align with project milestones. All invoices are due upon the
+                date of receipt unless otherwise specified.
+              </p>
               <ul className="space-y-5">
-                {privacyData.paymentTerms.map((data, index) => (
+                <li className="font-semibold">
+                  For Website Design & Development Projects:
+                </li>
+                {privacyData.paymentTerms.webDesign.map((data, index) => (
                   <li key={index} className="flex items-start gap-1">
                     <div className="mt-1.5">
                       <StarIcon />
                     </div>
-                    {data}
+                    <span>
+                      <span className="font-semibold">{data.boldText}</span>{' '}
+                      {data.normalText}
+                    </span>
                   </li>
                 ))}
               </ul>
+
+              <ul className="space-y-5">
+                <li className="font-semibold">
+                  For Logo Design / Branding Projects:
+                </li>
+                <li className="flex items-start gap-1">
+                  <div className="mt-1.5">
+                    <StarIcon />
+                  </div>
+                  Payments for all branding packages are split into two
+                  milestones: 50% upfront to commence the project and 50% upon
+                  final brand identity design approval before final brand files
+                  are prepared for handover.
+                </li>
+              </ul>
+
+              <ul className="space-y-5">
+                <li className="font-semibold">
+                  For Ongoing Monthly Services (e.g., Social Media Management):
+                </li>
+                <li className="flex items-start gap-1">
+                  <div className="mt-1.5">
+                    <StarIcon />
+                  </div>
+                  Services are billed monthly in advance.
+                </li>
+              </ul>
+              <p>
+                Invoices have a validity period. If a client fails to pay before
+                the invoice expires, the invoice becomes void. The client must
+                request a new invoice; old invoices must not be paid after
+                expiration.
+              </p>
             </div>
 
             <div
@@ -250,6 +308,11 @@ const TermsOfServicePage = () => {
 
             <div id="revisions-policy" className="space-y-5">
               <h3>Revisions Policy</h3>
+              <p>
+                Our revision policy is designed to ensure a smooth and efficient
+                project workflow while setting clear expectations for both
+                website and brand designs.
+              </p>
               <p>
                 <span className="font-semibold">Starter Package:</span> Includes
                 1 round of revision on designs. Any further revisions are
