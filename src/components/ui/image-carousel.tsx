@@ -8,6 +8,7 @@ import Image from 'next/image';
 interface CarouselImage {
   src: string;
   alt: string;
+  blurDataURL?: string; // Optional blur placeholder
 }
 
 interface ImageCarouselProps {
@@ -130,6 +131,10 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
               height={466}
               className="h-auto w-full"
               priority={currentIndex === 0}
+              placeholder={
+                images[currentIndex].blurDataURL ? 'blur' : undefined
+              }
+              blurDataURL={images[currentIndex].blurDataURL}
             />
           </motion.div>
         </AnimatePresence>
@@ -142,6 +147,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
           height={466}
           className="h-auto w-full opacity-0"
           aria-hidden="true"
+          placeholder={images[0].blurDataURL ? 'blur' : undefined}
+          blurDataURL={images[0].blurDataURL}
         />
       </div>
     </div>

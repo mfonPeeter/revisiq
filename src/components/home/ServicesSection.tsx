@@ -20,7 +20,7 @@ const services = [
     heading: 'Logo Design / Branding',
     description:
       'We shape distinctive brand identities that capture attention, build trust, and position your business for lasting impact.',
-    route: 'logo-design-branding',
+    route: '/pricing#logo-design-branding',
   },
   {
     icons: <WebDesignIcon />,

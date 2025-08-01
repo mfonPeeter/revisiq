@@ -10,18 +10,26 @@ import ImageCarousel from '../ui/image-carousel';
 import { RocketIcon } from '../icons';
 import FloatingParticles from '../ui/floating-particles';
 
+// explicitly import images for blurDataURL to work automatically
+import project1 from '/public/images/hero/project-1.png';
+import project2 from '/public/images/hero/project-2.png';
+import project3 from '/public/images/hero/project-3.png';
+
 const carouselImages = [
   {
-    src: '/images/hero/project-1.png',
+    src: project1.src,
     alt: 'Project 1',
+    blurDataURL: project1.blurDataURL,
   },
   {
-    src: '/images/hero/project-2.png',
+    src: project2.src,
     alt: 'Project 2',
+    blurDataURL: project2.blurDataURL,
   },
   {
-    src: '/images/hero/project-3.png',
+    src: project3.src,
     alt: 'Project 3',
+    blurDataURL: project3.blurDataURL,
   },
 ];
 
